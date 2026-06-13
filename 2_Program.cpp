@@ -2,39 +2,41 @@
 #include <iostream>
 #include <unordered_map>
 
-std::unordered_map<long long, bool> dp;
+
+// We don't need to use DP because every next number is unique to check prime or not
+// std::unordered_map<long long, bool> dp;
+
+// bool isPrime(long long n) {
+//     if (dp.find(n) != dp.end()) {
+//         return dp[n];
+//     }
+
+//     if (n < 2) {
+//         return dp[n] = false;
+//     }
+
+//     for (long long i = 2; i * i <= n; i++) {
+//         if (n % i == 0) {
+//             return dp[n] = false;
+//         }
+//     }
+
+//     return dp[n] = true;
+// }
 
 bool isPrime(long long n) {
-    if (dp.find(n) != dp.end()) {
-        return dp[n];
-    }
-
     if (n < 2) {
-        return dp[n] = false;
+        return false;
     }
 
     for (long long i = 2; i * i <= n; i++) {
         if (n % i == 0) {
-            return dp[n] = false;
+            return false;
         }
     }
 
-    return dp[n] = true;
+    return true;
 }
-
-// bool isPrime(long long n) {
-//     if (n < 2) {
-//         return false;
-//     }
-//
-//     for (long long i = 2; i * i <= n; i++) {
-//         if (n % i == 0) {
-//             return false;
-//         }
-//     }
-//
-//     return true;
-// }
 
 
 /*
